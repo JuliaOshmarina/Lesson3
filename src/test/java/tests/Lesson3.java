@@ -43,7 +43,7 @@ public class Lesson3 {
 
         //Data
         $("#subjectsInput").setValue("English").pressEnter();
-        $(byText("Sports")).click();
+        $("[id=hobbiesWrapper]").$(byText("Sports")).click();
 
         //Picture
         $("#uploadPicture").uploadFromClasspath("test.jpg");
