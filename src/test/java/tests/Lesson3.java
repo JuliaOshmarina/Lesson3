@@ -8,27 +8,27 @@ import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class Lesson3 {
 
     @BeforeAll
     static void beforeAll() {
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
-        Configuration.timeout = 5000; // default 4000
+        Configuration.holdBrowserOpen = false;
     }
 
     @Test
     void successfulSearchTest() {
         open("https://demoqa.com/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
         //Datа
         $("[id=firstName]").setValue("Julia");
         $("[id=lastName]").setValue("Oshmarina");
         $("[id=userEmail]").setValue("juffgdfgd@gmail.com");
-        $(byText("Male")).click();
+        $("[id=genterWrapper]").$(byText("Male")).click();
         $("[id=userNumber]").setValue("4544263545");
 
         //birth
@@ -46,8 +46,7 @@ public class Lesson3 {
         $(byText("Sports")).click();
 
         //Picture
-        File cv = new File("src/resources/test.jpg");
-        $("#uploadPicture").uploadFile(cv);
+        $("#uploadPicture").uploadFromClasspath("test.jpg");
 
 
         //Adress
