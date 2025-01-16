@@ -37,14 +37,6 @@ public class Lesson11 {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
-    @AfterEach
-    void addAttachments() {
-        Attach.screenshotAs("Last screenshot");
-        Attach.pageSource();
-        Attach.browserConsoleLogs();
-        Attach.addVideo();
-
-    }
 
 
     @Test
@@ -98,11 +90,15 @@ public class Lesson11 {
         $(".table").$(byText("Gender")).sibling(0).shouldHave(text("Male"));
         $(".table").$(byText("Mobile")).sibling(0).shouldHave(text("4544263545"));
         $(".table").$(byText("Date of Birth")).sibling(0).shouldHave(text("18 April,2001"));
-        $(".table").$(byText("Subjects")).sibling(0).shouldHave(text("куку"));
+        $(".table").$(byText("Subjects")).sibling(0).shouldHave(text("English"));
         $(".table").$(byText("Hobbies")).sibling(0).shouldHave(text("Sports"));
         $(".table").$(byText("Picture")).sibling(0).shouldHave(text("test.jpg"));
         $(".table").$(byText("Address")).sibling(0).shouldHave(text("Russia"));
         $(".table").$(byText("State and City")).sibling(0).shouldHave(text("Rajasthan Jaiselmer"));
         });
+
+        Attach.screenshotAs();
     }
+
+
 }
