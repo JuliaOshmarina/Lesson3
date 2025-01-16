@@ -98,7 +98,7 @@ public class Lesson11 {
         $(".table").$(byText("Gender")).sibling(0).shouldHave(text("Male"));
         $(".table").$(byText("Mobile")).sibling(0).shouldHave(text("4544263545"));
         $(".table").$(byText("Date of Birth")).sibling(0).shouldHave(text("18 April,2001"));
-        $(".table").$(byText("Subjects")).sibling(0).shouldHave(text("Englis"));
+        $(".table").$(byText("Subjects")).sibling(0).shouldHave(text("куку"));
         $(".table").$(byText("Hobbies")).sibling(0).shouldHave(text("Sports"));
         $(".table").$(byText("Picture")).sibling(0).shouldHave(text("test.jpg"));
         $(".table").$(byText("Address")).sibling(0).shouldHave(text("Russia"));
