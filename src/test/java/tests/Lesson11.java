@@ -37,7 +37,14 @@ public class Lesson11 {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
+    @AfterEach
+    void addAttachments() {
+        Attach.screenshotAs("Last screenshot");
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.addVideo();
 
+    }
 
     @Test
     @Tag("lesson")
@@ -97,7 +104,6 @@ public class Lesson11 {
         $(".table").$(byText("State and City")).sibling(0).shouldHave(text("Rajasthan Jaiselmer"));
         });
 
-        Attach.screenshotAs();
     }
 
 
