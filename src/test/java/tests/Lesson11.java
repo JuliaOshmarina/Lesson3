@@ -64,16 +64,16 @@ public class Lesson11 {
         $("[id=genterWrapper]").$(byText("Male")).click();
         $("[id=userNumber]").setValue("4544263545");
 
-        //birth
-        $("[id=dateOfBirthInput]").click();
-        $("[class~=react-datepicker__year-select]").click();
-        $(".react-datepicker__year-select").selectOption("2001");
-        $(".react-datepicker__year-select").click();
-        $("[class~=react-datepicker__month-select]").click();
-        //$(.react-datepicker__month-select").selectOption("April");
-        $(".react-datepicker__month-select").selectOption("April");
-        $(".react-datepicker__month-select").click();
-        $("[class~=react-datepicker__day--018]").click();
+            //birth
+            $("[id=dateOfBirthInput]").click();
+            $("[class~=react-datepicker__year-select]").click();
+            $(".react-datepicker__year-select").selectOption("2001");
+            $(".react-datepicker__year-select").click();
+            $("[class~=react-datepicker__month-select]").click();
+            //$(.react-datepicker__month-select").selectOption("April");
+            $(".react-datepicker__month-select").selectOption("April");
+            $(".react-datepicker__month-select").click();
+            $("[class~=react-datepicker__day--018]").click();
 
         //Data
         $("#subjectsInput").setValue("English").pressEnter();
