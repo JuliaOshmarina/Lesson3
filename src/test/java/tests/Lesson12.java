@@ -21,9 +21,11 @@ public class Lesson12 {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = System.getProperty("PERMISSION","1920x1080");
+        Configuration.browser = System.getProperty("BROWSER", "chrome");
+        Configuration.browserVersion = System.getProperty("VERSION", "120");
         Configuration.pageLoadStrategy = "eager";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = System.getProperty("WDHOST","https://user1:1234@selenoid.autotests.cloud/wd/hub");
 
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -49,7 +51,7 @@ public class Lesson12 {
     @Tag("browser")
     void successfulSearchTest() {
         step("Открываем главную страницу", () -> {
-        open("https://demoqa.com/automation-practice-form");
+        open();
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         });
