@@ -50,3 +50,9 @@ task lesson_test(type: Test) {
         includeTags("lesson")
     }
 }
+
+task browser_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("browser")
+    }
+}
