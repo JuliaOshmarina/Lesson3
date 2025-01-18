@@ -21,6 +21,7 @@ public class Lesson12 {
 
     @BeforeAll
     static void beforeAll() {
+        Configuration.baseUrl = System.getProperty("baseURL", "https://demoqa.com");
         Configuration.browserSize = System.getProperty("PERMISSION","1920x1080");
         Configuration.browser = System.getProperty("BROWSER", "chrome");
         Configuration.browserVersion = System.getProperty("VERSION", "120");
