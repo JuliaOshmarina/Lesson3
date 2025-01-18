@@ -51,7 +51,7 @@ public class Lesson12 {
     @Tag("browser")
     void successfulSearchTest() {
         step("Открываем главную страницу", () -> {
-        open();
+        open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         });
